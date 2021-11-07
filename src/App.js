@@ -3,7 +3,7 @@ import Layout from "./layouts/Layout";
 import CreateQuiz from "./pages/CreateQuiz";
 import EditQuiz from "./pages/EditQuiz";
 import Home from "./pages/Home";
-import ShowQuiz from "./pages/ShowQuiz";
+import NotFound from "./pages/errors/NotFound";
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
         <Route exact path="/" element={<Home />} />
         <Route exact path="/quiz/create" element={<CreateQuiz />} />
         <Route exact path="/quiz/edit/:id" element={<EditQuiz />} />
-        <Route exact path="/quiz/show/:id" element={<ShowQuiz />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Layout>
   );

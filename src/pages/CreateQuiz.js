@@ -40,7 +40,7 @@ const CreateQuiz = (props) => {
 
       if (isValidQuestions) {
         const questions = data.questions.map((question) => {
-          const { answers } = question.answers.map((answer) => ({
+          const answers = question.answers.map((answer) => ({
             ...answer,
             id: generateAnswerId(),
           }));

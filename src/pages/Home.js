@@ -33,14 +33,6 @@ const Home = (props) => {
               <div>
                 <Button
                   as={Link}
-                  to={`/quiz/show/${quiz.id}`}
-                  variant="info"
-                  className="me-3"
-                >
-                  Show
-                </Button>
-                <Button
-                  as={Link}
                   to={`/quiz/edit/${quiz.id}`}
                   variant="primary"
                 >
