@@ -6,6 +6,11 @@ const initialStates = {
   quiz: {
     data: [quizes],
   },
+  ids: {
+    quizId: 30,
+    questionId: 56,
+    answerId: 131,
+  },
 };
 
 const store = createStore(

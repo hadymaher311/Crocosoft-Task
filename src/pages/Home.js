@@ -1,6 +1,7 @@
 import React from "react";
-import { Button, Container, ListGroup } from "react-bootstrap";
+import { Badge, Button, Container, ListGroup } from "react-bootstrap";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
 const Home = (props) => {
   const { quizzes } = props;
@@ -8,7 +9,7 @@ const Home = (props) => {
     <div>
       <Container>
         <div className="mb-3 d-flex justify-content-end">
-          <Button as="a" href={`/quiz/create`} variant="success">
+          <Button as={Link} to={`/quiz/create`} variant="success">
             Create Quiz
           </Button>
         </div>
@@ -21,19 +22,28 @@ const Home = (props) => {
               className="d-flex justify-content-between align-items-start"
             >
               <div className="ms-2 me-auto">
-                <div className="fw-bold">{quiz.title}</div>
+                <div className="fw-bold">
+                  {quiz.title} <Badge bg="primary">{quiz.score}</Badge>
+                </div>
                 {quiz.description}
+                <p className="text-muted">
+                  <a href={quiz.url}>{quiz.url}</a>
+                </p>
               </div>
               <div>
                 <Button
-                  as="a"
-                  href={`/quiz/show/${quiz.id}`}
+                  as={Link}
+                  to={`/quiz/show/${quiz.id}`}
                   variant="info"
                   className="me-3"
                 >
                   Show
                 </Button>
-                <Button as="a" href={`/quiz/edit/${quiz.id}`} variant="primary">
+                <Button
+                  as={Link}
+                  to={`/quiz/edit/${quiz.id}`}
+                  variant="primary"
+                >
                   Edit
                 </Button>
               </div>
